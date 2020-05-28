@@ -1,6 +1,11 @@
 'use strict'
+// exports.getRandomValues = exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('./randombytes')
+exports.getRandomValues = exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = function (ar) {
+  for (var i = 0; i < ar.length; i++) {
+    ar[i] = Math.floor(256 * Math.random());
+  }
+};
 
-exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('randombytes')
 exports.createHash = exports.Hash = require('create-hash')
 exports.createHmac = exports.Hmac = require('create-hmac')
 
